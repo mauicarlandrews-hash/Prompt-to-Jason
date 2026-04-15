@@ -189,6 +189,17 @@ button {
 #copyBtn:hover {
   background: rgba(30, 64, 175, 0.45);
 }
+.secondary-btn {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #9ca3af !important;
+  border: 1px solid rgba(148, 163, 184, 0.3) !important;
+  box-shadow: none !important;
+}
+.secondary-btn:hover {
+  background: rgba(30, 41, 59, 0.9) !important;
+  color: #e5e7eb !important;
+  border-color: rgba(148, 163, 184, 0.5) !important;
+}
 
 .output-section {
   min-height: 180px;

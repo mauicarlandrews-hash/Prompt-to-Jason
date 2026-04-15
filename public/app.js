@@ -5,6 +5,7 @@ const copyBtn = document.getElementById("copyBtn");
 const jsonFormatBtn = document.getElementById("jsonFormatBtn");
 const xmlFormatBtn = document.getElementById("xmlFormatBtn");
 const outputLabel = document.getElementById("outputLabel");
+const clearBtn = document.getElementById("clearBtn");
 
 let currentFormat = "json";
 
@@ -242,6 +243,15 @@ function handleCopy() {
 
 translateBtn.addEventListener("click", () => {
   handleTranslate();
+});
+clearBtn.addEventListener("click", () => {
+  promptInput.value = "";
+  outputEl.textContent =
+    currentFormat === "xml"
+      ? "<!-- Enter an English prompt on the left. XML will appear here. -->"
+      : "// Enter an English prompt on the left.\n// JSON will appear here.";
+  outputEl.classList.add("empty");
+  promptInput.focus();
 });
 copyBtn.addEventListener("click", handleCopy);
 
