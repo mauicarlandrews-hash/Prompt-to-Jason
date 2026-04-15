@@ -78,3 +78,5 @@ app.listen(port, () => {
   console.log(`[prompt-to-jason] Server listening on http://localhost:${port}`);
 });
 
+export default app;
+
