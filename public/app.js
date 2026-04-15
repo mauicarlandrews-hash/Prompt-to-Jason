@@ -172,7 +172,8 @@ async function callApi(prompt, format) {
   });
 
   if (!resp.ok) {
-    throw new Error(`API error: ${resp.status}`);
+    const errorData = await resp.json().catch(() => ({}));
+    throw new Error(errorData.error || `API error: ${resp.status}`);
   }
 
   const data = await resp.json();
@@ -201,10 +202,17 @@ async function handleTranslate() {
   } catch (e) {
     // Fallback to local heuristic inference if API fails
     console.warn("API translation failed, falling back to local heuristics:", e);
+    
+    // Check if we can get a specific error message from the error object
+    const errorMessage = e.message && e.message.includes("API Key is missing")
+      ? "// ERROR: Anthropic API Key is missing in Vercel settings.\n// Falling back to local heuristics..."
+      : null;
+
     const mockResult = currentFormat === "xml" 
       ? inferXmlFromPrompt(prompt) 
       : inferJsonFromPrompt(prompt);
-    outputEl.textContent = mockResult;
+      
+    outputEl.textContent = errorMessage ? `${errorMessage}\n\n${mockResult}` : mockResult;
     
     // Add a temporary notice that this is a mock
     const originalLabel = outputLabel.textContent;

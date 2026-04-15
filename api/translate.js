@@ -39,6 +39,12 @@ export default async function handler(req, res) {
         ? `Convert the following English description into a well-structured XML representation.\n\nEnglish:\n${prompt}`
         : `Convert the following English description into a well-structured JSON representation.\n\nEnglish:\n${prompt}`;
 
+    if (!process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY === "missing") {
+      return res.status(401).json({ 
+        error: "Anthropic API Key is missing. Please add ANTHROPIC_API_KEY to your Vercel Environment Variables." 
+      });
+    }
+
     const response = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20241022",
       max_tokens: 1024,
