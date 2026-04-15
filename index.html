@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English → JSON/XML Translator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>English → JSON/XML Translator</h1>
+      <p>Paste an instruction in English and get structured JSON or XML.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="input-section">
+        <label for="prompt">English prompt</label>
+        <textarea id="prompt" placeholder="e.g. Create a user with name, email, and an isAdmin flag."></textarea>
+        <div class="controls-row">
+          <div class="format-toggle" aria-label="Output format">
+            <button type="button" id="jsonFormatBtn" class="format-btn active" data-format="json">JSON</button>
+            <button type="button" id="xmlFormatBtn" class="format-btn" data-format="xml">XML</button>
+          </div>
+          <button id="translateBtn">Translate</button>
+        </div>
+      </section>
+
+      <section class="output-section">
+        <div class="output-header">
+          <span id="outputLabel">JSON output</span>
+          <button id="copyBtn" title="Copy output to clipboard">Copy</button>
+        </div>
+        <pre id="output" class="output" aria-live="polite"></pre>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Powered by Claude-3.5 Sonnet (with local heuristic fallback).</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
