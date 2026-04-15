@@ -26,8 +26,8 @@ const anthropic = new Anthropic({
 app.use(cors());
 app.use(express.json());
 
-// Serve the static web app from this folder.
-app.use(express.static(__dirname));
+// Serve the static web app from the public folder.
+app.use(express.static(path.join(__dirname, "public")));
 
 app.post("/api/translate", async (req, res) => {
   try {
