@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Powerball 60 — Business-Card Size</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0.4in;
+    background: #fff;
+    color: #111;
+  }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  .sub { font-size: 12px; color: #555; margin: 0 0 16px; max-width: 7in; }
+
+  /* business-card grid: 2 across, 3 down */
+  .sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 3.5in);
+    grid-auto-rows: 2in;
+    gap: 0.25in;
+  }
+  .card {
+    width: 3.5in;
+    height: 2in;
+    border: 1px solid #999;
+    border-radius: 8px;
+    padding: 0.12in 0.16in;
+    display: flex;
+    flex-direction: column;
+    page-break-inside: avoid;
+    overflow: hidden;
+  }
+  .card .hint {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    color: #222;
+    margin: 0 0 5px;
+    text-align: center;
+  }
+  .grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-content: center;
+    gap: 3px 2px;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    line-height: 1.05;
+  }
+  @media print {
+    body { padding: 0; }
+    .no-print { display: none; }
+    .sheet { gap: 0; }
+    .card { border: 1px dashed #bbb; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+  <h1 class="no-print">Powerball&nbsp;60 — Business-Card Size (3.5&Prime; × 2&Prime;)</h1>
+  <p class="sub no-print">Six cards, each standard business-card size. The hidden value of each card is its smallest number (1, 2, 4, 8, 16, 32). When the spectator hands you their cards, add those values — the total is their number. Print at 100% / “Actual size” (no scaling), then cut along the borders.</p>
+
+  <div class="sheet">
+    <!-- value 1 -->
+    <div class="card">
+      <p class="hint">Is your number here?</p>
+      <div class="grid">
+        <span>1</span><span>3</span><span>5</span><span>7</span><span>9</span><span>11</span>
+        <span>13</span><span>15</span><span>17</span><span>19</span><span>21</span><span>23</span>
+        <span>25</span><span>27</span><span>29</span><span>31</span><span>33</span><span>35</span>
+        <span>37</span><span>39</span><span>41</span><span>43</span><span>45</span><span>47</span>
+        <span>49</span><span>51</span><span>53</span><span>55</span><span>57</span><span>59</span>
+      </div>
+    </div>
+
+    <!-- value 2 -->
+    <div class="card">
+      <p class="hint">Is your number here?</p>
+      <div class="grid">
+        <span>2</span><span>3</span><span>6</span><span>7</span><span>10</span><span>11</span>
+        <span>14</span><span>15</span><span>18</span><span>19</span><span>22</span><span>23</span>
+        <span>26</span><span>27</span><span>30</span><span>31</span><span>34</span><span>35</span>
+        <span>38</span><span>39</span><span>42</span><span>43</span><span>46</span><span>47</span>
+        <span>50</span><span>51</span><span>54</span><span>55</span><span>58</span><span>59</span>
+      </div>
+    </div>
+
+    <!-- value 4 -->
+    <div class="card">
+      <p class="hint">Is your number here?</p>
+      <div class="grid">
+        <span>4</span><span>5</span><span>6</span><span>7</span><span>12</span><span>13</span>
+        <span>14</span><span>15</span><span>20</span><span>21</span><span>22</span><span>23</span>
+        <span>28</span><span>29</span><span>30</span><span>31</span><span>36</span><span>37</span>
+        <span>38</span><span>39</span><span>44</span><span>45</span><span>46</span><span>47</span>
+        <span>52</span><span>53</span><span>54</span><span>55</span><span>60</span>
+      </div>
+    </div>
+
+    <!-- value 8 -->
+    <div class="card">
+      <p class="hint">Is your number here?</p>
+      <div class="grid">
+        <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+        <span>14</span><span>15</span><span>24</span><span>25</span><span>26</span><span>27</span>
+        <span>28</span><span>29</span><span>30</span><span>31</span><span>40</span><span>41</span>
+        <span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span>
+        <span>56</span><span>57</span><span>58</span><span>59</span><span>60</span>
+      </div>
+    </div>
+
+    <!-- value 16 -->
+    <div class="card">
+      <p class="hint">Is your number here?</p>
+      <div class="grid">
+        <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+        <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+        <span>28</span><span>29</span><span>30</span><span>31</span><span>48</span><span>49</span>
+        <span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span>
+        <span>56</span><span>57</span><span>58</span><span>59</span><span>60</span>
+      </div>
+    </div>
+
+    <!-- value 32 -->
+    <div class="card">
+      <p class="hint">Is your number here?</p>
+      <div class="grid">
+        <span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span>
+        <span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span>
+        <span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span>
+        <span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span>
+        <span>56</span><span>57</span><span>58</span><span>59</span><span>60</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="no-print" style="margin-top:16px;font-size:12px;color:#777">
+    Print tip: ⌘P → set Scale to 100% (turn off “Fit to page”) so cards come out exactly 3.5&Prime; × 2&Prime;.
+  </p>
+</body>
+</html>
